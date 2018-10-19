@@ -1,0 +1,254 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#page-sample{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*FLEX SLIDERR///////////////////////*/
+.flexslider{
+	width: 100%;
+
+	margin-top: 50px;
+
+	display: flex;
+	flex-direction: column;	
+
+	position: relative;
+}
+
+@media screen and (max-width:780px){
+	.flexslider{
+		margin: 0;
+	}
+}
+
+.slides,
+.slides li,
+.slides li img{
+	width: 100%;
+	background: center no-repeat;
+	background-size: cover;
+}
+
+@media screen and (max-width:860px){
+	.slides,
+	.slides li,
+	.slides li img{
+		height: 30vh;
+	}
+}
+
+@media screen and (min-width:411px) and (max-width:599px){
+	.slides,
+	.slides li,
+	.slides li img{
+		height: 30vh;
+	}
+
+	.slides li img{
+		transform: translate(-50px);
+	}
+}
+
+.slides li{
+	margin-bottom: -20px;
+}
+
+
+/*PAGINACIÓN==============*/
+.flex-control-nav.flex-control-paging
+{
+	width: 150px;
+	padding: 20px 0px;
+	border-radius: 10px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+
+	list-style: none;
+	position: absolute;
+	bottom: 0px;
+	z-index: 3;
+}
+
+.flex-control-nav li{
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.flex-control-nav li a{
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	border-radius: 50%;
+	text-indent: -9999px;
+	/*box-shadow: inset 0px -3px 2px 0px rgba(0, 0, 0, 0.55);*/
+}
+
+.flex-control-nav li a.flex-active{
+	background: rgb(126, 126, 126);
+}
+
+/*NAVEGACIÓN===========================================================*/
+
+.flex-direction-nav{
+	z-index: 3;
+	list-style: none;
+}
+
+.flex-direction-nav a{
+	width: 60px;
+	height: 60px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+
+	text-decoration: none;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+
+	transition: all 0.3s ease-in-out;
+
+	transform: translateY(-50%);
+}
+
+@media screen and (max-width:480px){
+	.flex-direction-nav a{
+		width: 10px;
+		height: 30px;
+	}
+}
+
+.flex-direction-nav a::before{
+	content: "\f104";
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 50px;
+	color: #fff;
+
+}
+
+.flex-direction-nav a.flex-next::before{
+	content: "\f105";
+}
+
+.flex-direction-nav .flex-prev{
+	left: 0px;
+}
+
+.flex-direction-nav .flex-next{
+	right: 0px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev{
+	opacity: 1;
+	left: 15px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-next{
+	opacity: 1;
+	right: 15px;
+}
+/*CAPTION===============================================================*/
+
+.caption{
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	top: 50%;
+	position: absolute;
+	z-index: 2;
+}
+
+.caption h2{
+	font-size: 60px;
+	color: #fff;
+	text-shadow: 3px 3px 2px rgba(000, 000, 000, 0.70);
+}
+
+/*RESPONSIVE=========*/
+
+
+@media screen and (max-width: 770px){
+	.flex-direction-nav a{
+		opacity: 1;
+	}
+
+	.flex-direction-nav .flex-prev{
+		left: 15px;
+	}
+
+	.flex-direction-nav .flex-next{
+		right: 15px;
+	}
+
+	.caption h2{
+		font-size: 50px;
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	.caption h2{
+		font-size: 40px;
+	}
+
+	.flexslider{
+		width: 100%;
+		border-radius: 0px;
+		border: none;
+	}
+
+	.slides li{
+		overflow: hidden;
+	}
+
+	.slides li img{
+		width: 600px;
+	}
+
+}
+
+@media screen and (max-width: 410px){
+	.slides li img{
+		width: 450px;
+	}
+
+	.slides,
+	.slides li,
+	.slides li img{
+	height: 20vh;
+	}
+
+	.slides li img{
+		transform: translate(-40px);
+	}
+
+
+	.flex-control-nav.flex-control-paging{
+		bottom: 0;
+	}
+}
